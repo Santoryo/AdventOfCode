@@ -21,13 +21,8 @@ function createTwoLists(lines: string[]): [number[], number[]]
         list1.push(parseInt(first));
         list2.push(parseInt(second));
     }
-    
-    return [list1, list2];
-}
 
-function sortList(list: number[]): number[]
-{
-    return list.sort((a, b) => a - b);
+    return [list1, list2];
 }
 
 function calculateDistance(list1: number[], list2: number[]): number
@@ -45,8 +40,8 @@ function main()
     const input = readInput('input');
     const lines = splitLines(input);
     const [list1, list2] = createTwoLists(lines);
-    const sortedList1 = sortList(list1);
-    const sortedList2 = sortList(list2);
+    const sortedList1 = list1.sort((a, b) => a - b);
+    const sortedList2 = list2.sort((a, b) => a - b);
     const distance = calculateDistance(sortedList1, sortedList2);
     console.log(distance);
 }
